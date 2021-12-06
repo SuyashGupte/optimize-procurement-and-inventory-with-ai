@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Decision Optimization</title>
+  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  <div class="navbar" id="navbar">
+      <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+      <a href="https://developer.ibm.com/patterns/leverage-decision-optimization-models-in-procurement-app-for-store-managers/"><i class="fa fa-info-circle"></i> About</a>
+    </div>
+  
+<center>
+    <h2>Optimize Your Plant Selection based on Demand and Capacity</h2>
+    <h3>Model takes products, demand, capacity, and cost as an input</h3>
+    <h3>Goal is to minimize cost and identify plants that can meet the products forecasted demand</h3>
+  <br>
+    <div class= "canvas-container">
+        <canvas id="myChart" width="700" height="350"></canvas>
+
+
+
+  <h4 id= "byodText">To upload your own data, click below</h4>
+  <button id="byod" type="button">Upload Data</button>
+  <br><br>
+
+  <h4 id= "defaultScenario">To run the default scenario click below</h4>
+  <button id="runScenario" type="button">Run Scenario</button>
+  <br><br>
+
+  <form method="post" enctype="multipart/form-data">
+    <input id= "chooseFiles" type="file" multiple="multiple" id="customerDemand"  accept=".csv" name="files[]">
+    <br><br>
+    <input id="csvSubmit" type="submit" value="Optimize">
+  </form>
+
+  <h3 id = "doOutputText">Decision Optimization Model Output</h3>
+  <div class="loader" id="firstSpinner"></div>
+  <pre id = "output"></pre>
+
+  <div>
+    <input value="See Solution" id="solutionUpdate" type="submit">
+  </div>
+  <h3 id = "doSolText">Decision Optimization Solution</h3>
+  <div class="loader" id="secondSpinner"></div>
+  
+  <canvas id="myChartSolution" width="600" height="300"></canvas>
+  <pre id = "solution"></pre>
+
+</center>
+
+
+<script src="js/script.js"></script>
+
+</html>
